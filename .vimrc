@@ -30,6 +30,9 @@ set browsedir=current
 set smarttab
 set wildignore=*.bak,*.o,*.e,*~ 
 set confirm
+set title
+set novisualbell
+set noerrorbells
 
 if &t_Co > 2 || has("gui_running")
   syntax on
@@ -37,7 +40,6 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 colorscheme evening
-
 
 filetype plugin indent on
 
