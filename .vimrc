@@ -39,7 +39,8 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-colorscheme evening
+colorscheme morning
+
 
 filetype plugin indent on
 
