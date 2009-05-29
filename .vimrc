@@ -7,8 +7,8 @@ set ruler
 set showcmd
 set wrap
 set sidescroll=10
-set list
-set listchars=tab:>-,trail:-
+"set list
+"set listchars=tab:>-,trail:-
 set cmdheight=3
 set background=light
 set report=0
@@ -28,6 +28,7 @@ set shiftround
 set infercase
 set browsedir=current
 set smarttab
+set shiftwidth=4
 set wildignore=*.bak,*.o,*.e,*~ 
 set confirm
 set title
@@ -44,7 +45,7 @@ colorscheme torte
 
 filetype plugin indent on
 
-autocmd FileType text,perl setlocal tw=78 ts=4
+autocmd FileType text,perl setlocal tw=78
 
 if has("autocmd")
 	 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -62,5 +63,23 @@ augroup myfiletypes
 	autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 ts=2 tw=100
 augroup END
 
+augroup mypython
+	autocmd!
+	autocmd FileTYpe python set ts=4 tw=79
+augroup END
 
 map <F7> :set invnumber<CR>
+
+
+"
+" Perltidy ( Luis Motta Campos )
+"
+
+map ,t :call Perltidy()<Cr>
+
+function! Perltidy()
+    let current_line = line('.')
+    let perltidy     = 'perltidy'
+    execute ":0,$!" . perltidy
+    execute ":" . current_line
+endfunction
