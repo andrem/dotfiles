@@ -42,7 +42,6 @@ endif
 
 colorscheme torte 
 
-
 filetype plugin indent on
 
 autocmd FileType text,perl setlocal tw=78
