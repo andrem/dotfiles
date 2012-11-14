@@ -6,7 +6,6 @@ set nocompatible
 set novisualbell
 set noerrorbells
 set notitle
-set nofoldenable
 set autoindent
 set nobackup
 set history=50
@@ -42,3 +41,5 @@ autocmd FileType tex        set expandtab tw=70
 autocmd FileType perl       set expandtab ts=4 ts=4 sw=4 sts=4 tw=79
 
 au BufNewFile *.html read ~/.vim/templates/html/skeleton.html
+
+colorscheme torte
